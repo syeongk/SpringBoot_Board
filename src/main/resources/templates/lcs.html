@@ -1,0 +1,4 @@
+<div th:if="${#lists.size(question.answerList)>0}" th:fragment="lcsFragment">
+    <img src="/content.png" style="width:15px; height:15px;">
+    <span th:text="${#lists.size(question.answerList)}" style="color: #46c1c5"></span>
+</div>

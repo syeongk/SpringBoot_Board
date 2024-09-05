@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+    <!-- Bootstrap JS -->
+    <script th:src="@{/bootstrap.min.js}"></script>
+    <title>게시판</title>
+</head>
+<body>
+<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+<!-- 네비게이션 바 -->
+<div th:replace="~{navbar :: navbarFragment}"></div>
+
+<!--기본 템플릿 안에 삽입될 내용 End-->
+<th:block layout:fragment="layout"></th:block>
+</body>
+</html>

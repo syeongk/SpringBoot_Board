@@ -1,0 +1,28 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="layout">
+<div class="container my-5">
+    <h1>질문 게시판</h1>
+    <div class="hstack gap-3">
+        <div class="p-2 ms-auto">검색</div>
+        <div class="vr"></div>
+        <div class="p-2"><a th:href="@{/question/add}"><button type="button" class="btn btn-link">글쓰기</button></a></div>
+    </div>
+    <hr>
+        <div>
+            <div th:each="question : ${questionList} ">
+                <div><a th:href="@{|/question/detail/${question.id}|}" style="color: black; text-decoration: none;">
+                    <div>
+                        <strong th:text="${question.title}"></strong>
+                        <div class="mb-2" th:text="${question.content}"></div>
+                        <div class="hstack gap-2" style="height: 25px;">
+                        <div th:replace="~{lcs :: lcsFragment}"></div>
+                            <div th:text="${#temporals.format(question.createdAt, 'MM/dd hh:mm')}"></div>
+                        </div>
+                        <hr>
+                    </div>
+                </a></div>
+            </div>
+        </div>
+</div>
+</div>
+</html>

@@ -1,0 +1,31 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="layout">
+<div class="container my-5">
+    <!-- 질문 -->
+    <div th:text="${#temporals.format(question.createdAt, 'MM/dd hh:mm')}"></div>
+    <h1 class="my-3" th:text="${question.title}"></h1>
+    <div class="my-3" th:text="${question.content}">내용</div>
+    <div th:replace="~{lcs :: lcsFragment}"></div>
+    <hr class="mb-3">
+
+
+    <!-- 답변 등록-->
+    <form th:action="@{|/answer/add/${question.id}|}" method="post" th:object="${answerForm}">
+        <div th:replace="~{form_errors :: formErrorsFragment}"></div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="댓글을 작성해주세요" th:field="*{content}">
+            <input type="submit" class="btn btn-outline-secondary" value="작성">
+        </div>
+    </form>
+    <hr class="mb-3">
+
+
+    <!-- 답변 목록-->
+    <div th:each="a, loop : ${question.answerList}">
+        <div th:text="'익명' + ${loop.count}"></div>
+        <div th:text="${a.content}"></div>
+        <hr class="mb-3">
+    </div>
+</div>
+</div>
+</html>

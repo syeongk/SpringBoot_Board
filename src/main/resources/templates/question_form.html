@@ -1,0 +1,21 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="layout">
+<div class="container my-5">
+    <form th:action="@{/question/add}" method="post" th:object="${questionForm}">
+        <div th:replace="~{form_errors :: formErrorsFragment}"></div>
+        <div>
+            <input type="text" class="form-control" placeholder="글 제목" th:field="*{title}">
+        </div>
+        <div>
+            <textarea class="form-control" th:field="*{content}" style="height: 300px"></textarea>
+        </div>
+        <div class="hstack gap-3">
+            <div class="p-2"><input type="file" name="image"></div>
+            <div class="p-2 ms-auto"><input type="submit" value="작성"></div>
+        </div>
+
+    </form>
+</div>
+</div>
+</body>
+</html>

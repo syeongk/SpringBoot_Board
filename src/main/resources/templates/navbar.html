@@ -1,0 +1,24 @@
+<div class="container" th:fragment="navbarFragment">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/everytime.png" alt="everytime" style="height: 70px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="">게시판</a>
+                    <a class="nav-link" href="#">시간표</a>
+                    <a class="nav-link" href="#">강의실</a>
+                    <a class="nav-link" href="#">학점계산기</a>
+                    <a class="nav-link" href="#">친구</a>
+                    <a class="nav-link" href="#">책방</a>
+                    <a class="nav-link" th:href="@{/user/login}">로그인</a>
+                    <a class="nav-link" th:href="@{/user/signup}">회원가입</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
