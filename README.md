@@ -24,5 +24,3 @@
 - 회원가입
   - 유효성 검사
 
-https://github.com/user-attachments/assets/998ab54b-1ca6-44ca-b628-000b888edd19
-
